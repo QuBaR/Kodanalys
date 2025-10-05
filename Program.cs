@@ -20,84 +20,87 @@ namespace Kodanalys
                 Console.WriteLine("5. Avsluta");
                 string menuChoice = Console.ReadLine();
 
-                if (menuChoice == "1")
+                switch (menuChoice)
                 {
-                    Console.Write("Ange namn: ");
-                    string newUser = Console.ReadLine();
-                    if (maxUsers < 10)
-                    {
-                        userArray[maxUsers] = newUser;
-                        maxUsers++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Listan är full!");
-                    }
-                }
-                else if (menuChoice == "2")
-                {
-                    Console.WriteLine("Användare:");
-                    for (int i = 0; i < maxUsers; i++)
-                    {
-                        Console.WriteLine(userArray[i]);
-                    }
-                }
-                else if (menuChoice == "3")
-                {
-                    Console.Write("Ange namn att ta bort: ");
-                    string userToRemove = Console.ReadLine();
-                    int userArrayIndex = -1;
-                    for (int i = 0; i < maxUsers; i++)
-                    {
-                        if (userArray[i] == userToRemove)
+                    case "1":
+                        Console.Write("Ange namn: ");
+                        string newUser = Console.ReadLine();
+                        if (maxUsers < 10)
                         {
-                            userArrayIndex = i;
-                            break;
+                            userArray[maxUsers] = newUser;
+                            maxUsers++;
                         }
-                    }
+                        else
+                        {
+                            Console.WriteLine("Listan är full!");
+                        }
+                        break;
 
-                    if (userArrayIndex != -1)
-                    {
-                        for (int i = userArrayIndex; i < maxUsers - 1; i++)
+                    case "2":
+                        Console.WriteLine("Användare:");
+                        for (int i = 0; i < maxUsers; i++)
                         {
-                            userArray[i] = userArray[i + 1];
+                            Console.WriteLine(userArray[i]);
                         }
-                        maxUsers--;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Användaren hittades inte.");
-                    }
-                }
-                else if (menuChoice == "4")
-                {
-                    Console.Write("Ange namn att söka: ");
-                    string search = Console.ReadLine();
-                    bool userFound = false;
-                    for (int i = 0; i < maxUsers; i++)
-                    {
-                        if (userArray[i] == search)
+                        break;
+
+                    case "3":
+                        Console.Write("Ange namn att ta bort: ");
+                        string userToRemove = Console.ReadLine();
+                        int userArrayIndex = -1;
+                        
+                        for (int i = 0; i < maxUsers; i++)
                         {
-                            userFound = true;
-                            break;
+                            if (userArray[i] == userToRemove)
+                            {
+                                userArrayIndex = i;
+                                break;
+                            }
                         }
-                    }
-                    if (userFound)
-                    {
-                        Console.WriteLine("Användaren finns i listan.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Användaren hittades inte.");
-                    }
-                }
-                else if (menuChoice == "5")
-                {
-                    programActive = false;
-                }
-                else
-                {
-                    Console.WriteLine("Ogiltigt val.");
+
+                        if (userArrayIndex != -1)
+                        {
+                            for (int i = userArrayIndex; i < maxUsers - 1; i++)
+                            {
+                                userArray[i] = userArray[i + 1];
+                            }
+                            maxUsers--;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Användaren hittades inte.");
+                        }
+                        break;
+
+                    case "4":
+                        Console.Write("Ange namn att söka: ");
+                        string search = Console.ReadLine();
+                        bool userFound = false;
+                        for (int i = 0; i < maxUsers; i++)
+                        {
+                            if (userArray[i] == search)
+                            {
+                                userFound = true;
+                                break;
+                            }
+                        }
+                        if (userFound)
+                        {
+                            Console.WriteLine("Användaren finns i listan.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Användaren hittades inte.");
+                        }
+                        break;
+
+                    case "5":
+                        programActive = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Ogiltigt val.");
+                        break;
                 }
                 Console.WriteLine();
             }
