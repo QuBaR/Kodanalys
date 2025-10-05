@@ -5,7 +5,7 @@ namespace Kodanalys
     class Program
     {
         static string[] userArray = new string[10];
-        static int maxUsers = 0;
+        static int ammountOfUsers = 0;
 
         static void Main(string[] args)
         {
@@ -25,10 +25,10 @@ namespace Kodanalys
                     case "1":
                         Console.Write("Ange namn: ");
                         string newUser = Console.ReadLine();
-                        if (maxUsers < 10)
+                        if (ammountOfUsers < 10)
                         {
-                            userArray[maxUsers] = newUser;
-                            maxUsers++;
+                            userArray[ammountOfUsers] = newUser;
+                            ammountOfUsers++;
                         }
                         else
                         {
@@ -38,7 +38,7 @@ namespace Kodanalys
 
                     case "2":
                         Console.WriteLine("Användare:");
-                        for (int i = 0; i < maxUsers; i++)
+                        for (int i = 0; i < ammountOfUsers; i++)
                         {
                             Console.WriteLine(userArray[i]);
                         }
@@ -48,8 +48,8 @@ namespace Kodanalys
                         Console.Write("Ange namn att ta bort: ");
                         string userToRemove = Console.ReadLine();
                         int userArrayIndex = -1;
-                        
-                        for (int i = 0; i < maxUsers; i++)
+
+                        for (int i = 0; i < ammountOfUsers; i++)
                         {
                             if (userArray[i] == userToRemove)
                             {
@@ -60,11 +60,11 @@ namespace Kodanalys
 
                         if (userArrayIndex != -1)
                         {
-                            for (int i = userArrayIndex; i < maxUsers - 1; i++)
+                            for (int i = userArrayIndex; i < ammountOfUsers - 1; i++)
                             {
                                 userArray[i] = userArray[i + 1];
                             }
-                            maxUsers--;
+                            ammountOfUsers--;
                         }
                         else
                         {
@@ -76,7 +76,7 @@ namespace Kodanalys
                         Console.Write("Ange namn att söka: ");
                         string search = Console.ReadLine();
                         bool userFound = false;
-                        for (int i = 0; i < maxUsers; i++)
+                        for (int i = 0; i < ammountOfUsers; i++)
                         {
                             if (userArray[i] == search)
                             {
