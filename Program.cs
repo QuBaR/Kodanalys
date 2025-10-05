@@ -75,16 +75,16 @@ namespace Kodanalys
                     case "4":
                         Console.Write("Ange namn att söka: ");
                         string search = Console.ReadLine();
-                        bool userFound = false;
+                        bool userIsFound = false;
                         for (int i = 0; i < ammountOfUsers; i++)
                         {
                             if (userArray[i] == search)
                             {
-                                userFound = true;
+                                userIsFound = true;
                                 break;
                             }
                         }
-                        if (userFound)
+                        if (userIsFound)
                         {
                             Console.WriteLine("Användaren finns i listan.");
                         }
