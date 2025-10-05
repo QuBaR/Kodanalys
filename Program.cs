@@ -58,7 +58,11 @@ namespace Kodanalys
                             }
                         }
 
-                        if (userArrayIndex != -1)
+                        if (userArrayIndex == -1)
+                        {
+                            Console.WriteLine("Användaren hittades inte.");
+                        }
+                        else
                         {
                             for (int i = userArrayIndex; i < ammountOfUsers - 1; i++)
                             {
@@ -66,10 +70,8 @@ namespace Kodanalys
                             }
                             ammountOfUsers--;
                         }
-                        else
-                        {
-                            Console.WriteLine("Användaren hittades inte.");
-                        }
+
+
                         break;
 
                     case "4":
