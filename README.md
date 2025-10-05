@@ -1,36 +1,24 @@
-# Kodanalys och förbättring
+Problem med orginella kodbasen:
+- problem 1: variabelnamnen betyder antingen inget eller anvÃ¤nds inte som man skulle tro med deras namn (programHalted anvÃ¤nds som) program aktivt
+Variabelnamnen var inte deskriptiva och fÃ¶rklara inte vad den anvÃ¤nds fÃ¶r, vilket gÃ¶r koden effektivt omÃ¶jlig att fÃ¶rstÃ¥ pÃ¥ en snabb glans. Innan du kan fÃ¶rstÃ¥ vad ett for loop gÃ¶r mÃ¥ste du kolla igenom koden och bygga en mindmap av vad alla variabler Ã¤r och hur de anvÃ¤nds. 
 
-## ?? Syfte
-Syftet med denna uppgift är att träna på att analysera befintlig kod, identifiera brister och förbättringsmöjligheter samt reflektera över hur förbättringarna påverkar kodens kvalitet, läsbarhet och underhållbarhet.
+- probelm 2: nestade if statements, vilket gÃ¶r det onÃ¶digt svÃ¥rt att fÃ¶lja
+Djupare nesting leder till svÃ¥rare lÃ¤st kod dÃ¥ det ser mer komplext ut Ã¤n vad det egentligen Ã¤r. 
 
-För VG ska studenten visa förmåga att självständigt analysera och utvärdera programmet samt motivera och genomföra förbättringar.
+- problem 3: mapp namn var icke hjÃ¤lpsamt.
+Mappnamnet fÃ¶r mappen med user.cs (modeler) gjorde det inte klart vad fÃ¶r typ av filer som kan hittas dÃ¤r, vilket gÃ¶r navigering svÃ¥rare. 
 
-## ?? Uppgift
-Du får en färdig C#-applikation (console-app) som innehåller flera medvetna brister:
-- Dåliga namn på variabler och metoder
-- Duplicerad kod
-- Bristande användning av samlingsklasser
-- Onödigt komplicerade if/else-satser
-- Inkonsekvent kodstil
 
-### Din uppgift
-1.  **Analysera koden**
-    - Beskriv de största problemen du identifierar (minst 3).
-    - Förklara varför dessa är problem, kopplat till principer för god kodkvalitet (ex. läsbarhet, DRY, enkelhet, underhållbarhet).
-2.  **Föreslå förbättringar**
-    - Ge konkreta förslag på hur koden kan förbättras.
-    - Motivera varför dina förslag gör koden bättre.
-3.  **Genomför förbättringarna**
-    - Refaktorera koden i Visual Studio.
-    - Använd Git för versionshantering och gör minst 3 separata commits där du beskriver vad som förbättras i varje steg.
-4.  **Reflektera**
-    - Skriv en kort text (1 A4- sida) där du sammanfattar vad du har lärt dig.
-    - Förklara hur dina förbättringar bidrar till att koden blir tydligare och mer lättunderhållen.
 
-## ? Bedömning
-- **Godkänt (G):** Studenten identifierar problem i koden, föreslår och genomför rimliga förbättringar, samt använder Git korrekt för att dokumentera sitt arbete.
-- **Väl godkänt (VG):** Studenten analyserar koden på djupet, identifierar både syntaktiska och strukturella problem, motiverar förbättringarna väl och visar förmåga att reflektera över hur ändringarna påverkar långsiktig kodkvalitet.
+FÃ¶rbÃ¤ttringar:
+- felhantering
+AnvÃ¤ndarnamn kan vara tomma, flera anvÃ¤ndare kan ha samma namn,
 
-## ?? Inlämning
-- Länk till ditt GitHub-repo med den refaktorerade koden (med commits).
-- En kort skriftlig rapport (PDF eller README i repot) med analys, förbättringsförslag och reflektion.
+- Meny alternativen kan sÃ¤ttas som klasser och metoder i sina egna filer
+GÃ¶r menyn enklare att arbetas pÃ¥ ensamt, samt gÃ¶r meny valen enklare att byta plats pÃ¥ om sÃ¥dan skulle behÃ¶vas (t.ex sÃ¤tta avsluta som ett senare val efter att mamn laggt till ett nytt menyval). Det gÃ¶r det ocksÃ¥ enklare att jobba pÃ¥ individuell funktionalitet om den behÃ¶vs Ã¤ndras eller fixas.
+
+
+
+Jag har lÃ¤rt mig mer om hur illa det Ã¤r att lÃ¤sa/jobba med kod som inte Ã¤r gjord med lÃ¤sbarhet in mind. Det gÃ¶r det betydligt svÃ¥rare Ã¤n nÃ¶dvÃ¤ndigt att jobba med.
+
+Med Ã¤ndringarna jag har gjort sÃ¥ Ã¤r det mindre gissning om vad en variabel Ã¤r fÃ¶r och vilken data den hÃ¥ller vilket gÃ¶r det enklare att modifiera, underhÃ¥lla och expandera. Det Ã¤r ocksÃ¥ enklare att fÃ¶lja vart du Ã¤r i koden och vad den gÃ¶r. 
